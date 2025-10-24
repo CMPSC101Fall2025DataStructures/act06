@@ -1,0 +1,52 @@
+# --> check the technical writing for various characteristics
+- writing/reflection.md:
+  - description: Ensure that reflection.md file exists in the writing/ directory
+    check: ConfirmFileExists
+  - description: Add your name to writing/reflection.md, then delete the 'Add your name here' placeholder 
+    check: MatchFileFragment
+    options:
+      fragment: "Add Your Name Here"
+      count: 0
+      exact: true
+  - description: Ensure no TODO items remain in the reflection
+    check: MatchFileFragment
+    options:
+      fragment: "TODO"
+      count: 0
+      exact: true
+  # - description: Ensure reflection contains substantial analysis in clear and meaningful language(minimum 100 words)
+  #   check: CountFileWords
+  #   options:
+  #     count: 100
+  #     exact: false
+
+# --> check that necessary files exist
+- ./src/main.py:
+  - description: Ensure that src/main.py file exists
+    check: ConfirmFileExists
+
+- ./src/algorithms.py:
+  - description: Ensure that src/algorithms.py file exists
+    check: ConfirmFileExists
+
+- ./src/timer.py:
+  - description: Ensure that src/timer.py file exists
+    check: ConfirmFileExists
+
+# --> Unused check that the project configuration is correct
+# Note: this may also include checking for specific settings in configuration files
+# - ./pyproject.toml:
+#   - description: Ensure that pyproject.toml file exists
+#     check: ConfirmFileExists
+#   - description: Ensure project name is set to 06-activity
+#     check: MatchFileFragment
+#     options:
+#       fragment: 'name = "06-activity"'
+#       count: 1
+#       exact: true
+
+# count number of commits in the GitHub repository
+- description: Have at least a specific minimum number of commits (3) in repository
+  check: CountCommits
+  options:
+    count: 3
