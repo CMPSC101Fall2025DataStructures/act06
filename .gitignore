@@ -1,0 +1,30 @@
+
+# Operating Systems #
+#####################
+
+# macOS #
+#########
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+###########
+# Software 
+###########
+.vscode/
+__pycache__/
+__pycache__
+*.log
+*.aux
+*.out
+.RData
+.RStudio
+.Rhistory
+.venv
+uv.lock
+
+# Code testing output files
+test_output.txt
+comparison_test.txt
+all_algorithms_final_test.txt
